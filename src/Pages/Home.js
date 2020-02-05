@@ -5,6 +5,7 @@ import Product from './product'
 import Footer from './footer'
 
 class Home extends Component {
+
   render () {
     return (
       <div className = "common_home">

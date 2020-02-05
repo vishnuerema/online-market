@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link, NavLink} from 'react-router-dom';
+import { Link, NavLink, Redirect} from 'react-router-dom';
+import alertify from 'alertifyjs';
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -30,6 +31,7 @@ class Signup extends Component {
       phone: null,
       email: null,
       password: null,
+      fireRedirect: false,
       formErrors: {
         name: "",
         phone: "",
@@ -59,10 +61,15 @@ class Signup extends Component {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.state)
-      }).then(response => {
-              console.log(response)
-              window.location.href = '/';
-          })
+      }).then(res => res.json()).then(response => {
+        if(response.status === true){
+          this.setState({ fireRedirect: true })
+        }
+        else{
+          alertify.alert('Deals of Market', 'Email id or phone number is already exits', function(){ 
+          });
+        }
+      })
           .catch(error =>{
               console.log(error)
           })
@@ -103,6 +110,10 @@ class Signup extends Component {
   };
 
   render() {
+
+    if(this.state.fireRedirect) {
+      return <Redirect to={'/'}/>
+  }
     const { formErrors } = this.state;
         return (
           <div className="App_cmn">

@@ -11,6 +11,14 @@ import images6 from '../images/toy1.jpeg'
 import images7 from '../images/watch.jpeg'
 import images8 from '../images/watch.jpeg'
 class Product extends Component {
+
+ componentDidMount () {
+    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res)
+      .then(response => {
+        console.log(response);
+      })
+  }
+
   render () {
     const options = {
       rewind: true,

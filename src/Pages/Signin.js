@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect  } from 'react-router-dom';
+import alertify from 'alertifyjs';
 
-  
   class Signin extends Component {
     constructor(props) {
       super(props);
@@ -9,6 +9,7 @@ import { Link, NavLink } from 'react-router-dom';
       this.state = {
         name: null,
         password: null,
+        fireRedirect: false,
         formErrors: {
           name: "",
           password: ""
@@ -26,12 +27,15 @@ import { Link, NavLink } from 'react-router-dom';
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(this.state)
-      }).then(response => {
-              console.log(response)
-              // if(response.ok === true){
-
-              // window.location.href = '/';
-              // }
+      }).then(res => res.json())
+      .then(response => {
+            if(response.status === true){
+              this.setState({ fireRedirect: true })
+            }
+            else{
+              alertify.alert('Deals of Market', 'your username or password is incorrect', function(){ 
+              });
+            }
           })
           .catch(error =>{
               console.log(error)
@@ -47,6 +51,9 @@ import { Link, NavLink } from 'react-router-dom';
     };
   
     render() {
+      if(this.state.fireRedirect) {
+          return <Redirect to={'/'}/>
+      }
       const { formErrors } = this.state;
         return (
           <div className="App_cmn">
