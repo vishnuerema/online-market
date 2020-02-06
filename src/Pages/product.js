@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-import images1 from '../images/clock.jpeg'
-import images2 from '../images/redmi8a.jpeg'
-import images3 from '../images/saree.jpeg'
-import images4 from '../images/shoe1.jpeg'
-import images6 from '../images/toy1.jpeg'
-import images7 from '../images/watch.jpeg'
-import images8 from '../images/watch.jpeg'
-class Product extends Component {
+import Skeleton from 'react-loading-skeleton';
 
+class Product extends Component {
+constructor(){
+  super()
+  this.state = {
+    data: [],
+    loaded: false
+  }
+}
  componentDidMount () {
-    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res)
+    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         console.log(response);
+        this.setState({
+          data: response,
+          loaded: true
+        })
       })
   }
 
@@ -28,6 +33,7 @@ class Product extends Component {
       margin:0,
       autoplayTimeout:1500,
       nav: true,
+      loop:true,
       responsive:{
         0:{
             items:1,
@@ -42,123 +48,42 @@ class Product extends Component {
         1000:{
             items:6,
             nav: true,
-            loop:true
         },
         1400:{
             items:7,
             nav: true,
-            loop:true,
         }
     }
   }
-    return (
-      <div className='product_cmn'>
-      <div className='product_head'>
-      <p className='product_hed_txt'>Deal of the day</p>
-      <Link className='viewall_btn' to='/'>view all</Link>
-      </div>
-        <OwlCarousel className='owl-theme' {...options}>
-            <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images1} alt="no-img" />
+  const { data } = this.state
+  if(this.state.loaded) {
+      return (
+        <div className='product_cmn'>
+        <div className='product_head'>
+        <p className='product_hed_txt'>Deal of the day</p>
+        <Link className='viewall_btn' to='/'>view all</Link>
+        </div>
+          <OwlCarousel className='owl-theme' {...options}>
+              {data.map((val,index) => ( 
+                  <div key={index} className='item'>
+                  <Link  to="/" className='product_a'>
+                    <div  className='products_img_txt'>
+                        <div className='products_img'>
+                          <img  className='img-fluid prodct_img' src={JSON.parse(val.home_product_images)[0]} alt="no-img" />
+                        </div>
+                        <div  className='products_detail'>
+                          <p  className='prod_name' >{val.home_product_name}</p>
+                            <p className='prod_dict'>{val.home_product_amount.cost}</p>
+                          <p className='prod_saving'></p>
+                      </div>
                     </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images2} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images3} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images4} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images6} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images7} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-             <div className='item'>
-              <Link to="/" className='product_a'>
-                <div className='products_img_txt'>
-                    <div className='products_img'>
-                      <img className='img-fluid prodct_img' src={images8} alt="no-img" />
-                    </div>
-                    <div className='products_detail'>
-                      <p className='prod_name'>Sarees</p>
-                      <p className='prod_dict'>Extra 10% off</p>
-                      <p className='prod_saving'>Great Savings!</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-        </OwlCarousel>
-      </div>
-    )
+              ))}
+          </OwlCarousel>
+        </div>
+      )
+              } else return (<div> <Skeleton circle={true} animation="wave" count={10} /> </div>)
   }
 }
 

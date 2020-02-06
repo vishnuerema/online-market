@@ -20,9 +20,8 @@ ul {
     padding: 0px;
 }
 
-button:focus,
-    {
-    outline: 0px;
+button:focus {
+    outline: 0px !important;
 }
 
 .form-control:focus {
@@ -391,6 +390,8 @@ input.error {
     border-radius: 2px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
     background-color: #fff;
+    width:98%;
+    margin: auto auto 20px;
 }
 
 .products_img_txt {
@@ -446,7 +447,28 @@ p.prod_name {
 .products_detail {
     margin-top: 20px;
 }
+.product_cmn button.owl-next {
+    position: absolute;
+    top: 35%;
+    width: 40px;
+    right: 0px;
+    background-color: #D6D6D6 !important;
+    color: #000 !important;
+}
 
+.product_cmn button.owl-prev {
+    position: absolute;
+    top: 35%;
+    width: 40px;
+    left: 0px;
+    background-color: #D6D6D6 !important;
+    color: #000 !important;
+}
+
+.product_cmn button.owl-prev span,
+.product_cmn button.owl-next span {
+    font-size: 50px;
+}
 /****product carousel******/
 /***footer*****/
 .footer {
@@ -488,3 +510,19 @@ h4.footer_menu_head {
     margin-top: 12px;
 }
 /***footer*****/
+/***Not found*****/
+.nofound_cmn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.oops_head {
+    font-size: 100px;
+}
+.not_head{
+    font-size: 50px;
+    margin-bottom: 20px !important;
+}
+/***Not found*****/

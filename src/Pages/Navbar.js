@@ -7,7 +7,7 @@ class Navbar extends Component {
 			<nav className='header navbar navbar-expand-lg'>
 				<div className='container'>
 					<div className='logo_navbar'>
-					<Link className='navbar-brand' to='/Home'>
+					<Link className='navbar-brand' to='/'>
 						Deals of Market
 					</Link>
 					</div>
@@ -39,14 +39,14 @@ class Navbar extends Component {
 							<button className="dropbtn logibtns"><Link className='nav_dropdwn_a' to='/Signin'>Login</Link></button>
 							<div className="dropdown-content nav_drop_dwn_contnt">
 								<Link className='nav_dropdwn_a' to='/Signup'>Sign up</Link>
-								<Link className='nav_dropdwn_a' to='/Home'>My Profile</Link>
-								<Link className='nav_dropdwn_a' to='/Home'>Orders</Link>
-								<Link className='nav_dropdwn_a' to='/Home'>Wishlist</Link>
+								<Link className='nav_dropdwn_a' to='/'>My Profile</Link>
+								<Link className='nav_dropdwn_a' to='/'>Orders</Link>
+								<Link className='nav_dropdwn_a' to='/'>Wishlist</Link>
 							</div>
 						</div>
 					</div>
 					<div className='nav_cartimg'>
-						<div className="cart_svg"><a className="cart_img_a" href="/Home"><svg className="_2fcmoV" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path className="_2JpNOH" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg><span className="cart_txt">Cart</span></a></div>
+						<div className="cart_svg"><a className="cart_img_a" href="/"><svg className="_2fcmoV" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path className="_2JpNOH" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg><span className="cart_txt">Cart</span></a></div>
 					</div>
 				</div>
 				</div>
@@ -59,8 +59,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Electronics <span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
@@ -69,8 +69,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Men<span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
@@ -79,8 +79,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Women<span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
@@ -89,8 +89,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Baby & Kids<span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
@@ -99,8 +99,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Home & Furniture<span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
@@ -109,8 +109,8 @@ class Navbar extends Component {
 								<div className="moredropbtn nav_more">Sports, Books & More<span className="nav_arrow_icon"><i className="fa fa-angle-down" ></i></span>
 								</div>
 								<div className="dropdown-content nav_drop_dwn_contnt">
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
-									<Link className='nav_dropdwn_a' to='/Home'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
+									<Link className='nav_dropdwn_a' to='/'>OnlineMarket</Link>
 								</div>
 							</div>
 						</div>
