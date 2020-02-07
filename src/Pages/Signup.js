@@ -54,7 +54,7 @@ class Signup extends Component {
         Password: ${this.state.password}
       `);
 
-      fetch('http://localhost/vishnue/Deals_of_market/public/usersRegistration',{
+      fetch('http://localhost/laravel/Deals_of_market/public/usersRegistration',{
         method: 'POST',
         headers: {
             Accept: 'application/json',

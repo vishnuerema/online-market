@@ -14,7 +14,7 @@ constructor(){
   }
 }
  componentDidMount () {
-    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
+    fetch('http://localhost/laravel/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         console.log(response);
         this.setState({
