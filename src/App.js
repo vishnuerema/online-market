@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Signup from './Pages/Signup'
 import Signin from './Pages/Signin'
 import Notfound from './Pages/Notfound'
+import Viewallproducts from './Pages/Viewall-products'
 import './App.css'
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
               <Route exact path='/' component={Home}></Route>
               <Route exact path='/Signup' component={Signup}></Route>
               <Route exact path='/Signin' component={Signin}></Route>
+              <Route exact path='/Viewall-products' component={Viewallproducts}></Route>
               <Route exact component={Notfound} />
             </Switch>
       </Router>

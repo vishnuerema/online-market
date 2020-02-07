@@ -5,7 +5,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import Skeleton from 'react-loading-skeleton';
 
-class Product extends Component {
+class Dealoftheday extends Component {
 constructor(){
   super()
   this.state = {
@@ -18,7 +18,12 @@ constructor(){
       .then(response => {
         console.log(response);
         this.setState({
-          data: response,
+          data: response.map(c => {
+            for(var i in c) {
+              if(c[i] != null && (c[i][0] === '{' || c[i][0] === '[')) c[i] = JSON.parse(c[i])
+            }
+            return c;
+          }),
           loaded: true
         })
       })
@@ -60,8 +65,7 @@ constructor(){
       return (
         <div className='product_cmn'>
         <div className='product_head'>
-        <p className='product_hed_txt'>Deal of the day</p>
-        <Link className='viewall_btn' to='/'>view all</Link>
+        <p className='product_hed_txt'>All Products</p>
         </div>
           <OwlCarousel className='owl-theme' {...options}>
               {data.map((val,index) => ( 
@@ -69,12 +73,12 @@ constructor(){
                   <Link  to="/" className='product_a'>
                     <div  className='products_img_txt'>
                         <div className='products_img'>
-                          <img  className='img-fluid prodct_img' src={JSON.parse(val.home_product_images)[0]} alt="no-img" />
+                          <img  className='img-fluid prodct_img' src={val.home_product_images[0]} alt="no-img" />
                         </div>
                         <div  className='products_detail'>
                           <p  className='prod_name' >{val.home_product_name}</p>
-                            <p className='prod_dict'>{val.home_product_amount.cost}</p>
-                          <p className='prod_saving'></p>
+                            <p className='prod_dict'>₹ {val.home_product_amount.cost}</p>
+                            <p className='prod_saving'>₹{val.home_product_amount.discount} Off</p>
                       </div>
                     </div>
                   </Link>
@@ -87,4 +91,4 @@ constructor(){
   }
 }
 
-export default Product
+export default Dealoftheday

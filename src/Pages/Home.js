@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import Banner from './banner'
-import Product from './product'
+import Dealsoftheday from './Dealsoftheday'
+import Allproduct from './Allproduct'
 import Footer from './footer'
 
 class Home extends Component {
@@ -11,7 +12,8 @@ class Home extends Component {
       <div className = "common_home">
         <Navbar />
     	  <Banner />
-    	  <Product />
+    	  <Dealsoftheday />
+        <Allproduct />
     	  <Footer />
       </div>
     	
