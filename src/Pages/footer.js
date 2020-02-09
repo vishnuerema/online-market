@@ -16,7 +16,7 @@ class Footer extends Component {
                                     className='nav-link'
                                     activeClassName='footer_pg--Active'
                                     exact
-                                    to='/Home'
+                                    to='/'
                                     >
                                     Home
                                     </NavLink>
