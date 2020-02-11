@@ -70,7 +70,7 @@ constructor(){
           <OwlCarousel className='owl-theme' {...options}>
               {data.map((val,index) => ( 
                   <div key={index} className='item'>
-                  <Link  to="/Viewcart" className='product_a'>
+                  <Link  to="/View-product" className='product_a'>
                     <div  className='products_img_txt'>
                         <div className='products_img'>
                           <img  className='img-fluid prodct_img' src={val.home_product_images[0]} alt="no-img" />

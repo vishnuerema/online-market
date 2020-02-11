@@ -560,7 +560,7 @@ img.product_add_img {
 /***viewcart*****/
 .viewcart_carosuel {
     width: 30%;
-}.viewcart_carosuel .control-dots,.viewcart_carosuel .control-arrow {
+}.viewcart_carosuel .control-dots{
     display: none;
 }
 .viewcart_carosuel .slider .view_cart_imgs {
