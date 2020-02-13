@@ -14,7 +14,7 @@ constructor(){
   }
 }
  componentDidMount () {
-    fetch('http://localhost/laravel/Deals_of_market/public/welcome').then(res => res.json())
+    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         this.setState({
           data: response,
@@ -65,7 +65,7 @@ constructor(){
           <OwlCarousel className='owl-theme' {...options}>
               {data.map((val,index) => ( 
                   <div key={index} className='item'>
-                  <Link  to="/" className='product_a'>
+                  <Link  to={`/View-product/${val.home_product_id}`} className='product_a'>
                     <div  className='products_img_txt'>
                         <div className='products_img'>
                           <img  className='img-fluid prodct_img' src={JSON.parse(val.home_product_images)[0]} alt="no-img" />

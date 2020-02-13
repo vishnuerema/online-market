@@ -5,6 +5,8 @@ import Footer from './footer'
 import Navbar from './Navbar'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import queryString from 'query-string';
+
 
 class Viewproduct extends Component {
 constructor(){
@@ -15,7 +17,7 @@ constructor(){
   }
 }
  componentDidMount () {
-    fetch('http://localhost/laravel/Deals_of_market/public/welcome').then(res => res.json())
+    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         this.setState({
             data: response[1].map(c => {
@@ -31,24 +33,27 @@ constructor(){
 
   render () {
     const { data } = this.state
-  if(this.state.loaded) {
-      return (
-        <div className = "common_cartview">
-        <Navbar />
-          <div className='product_cart'>
-          <Carousel className="viewcart_carosuel">
-          {data.map((val,index) => ( 
-                <div  key={index} className="viewcart_imgdiv">
-                    <img  className='img-fluid view_cart_imgs' src={val.home_product_images[0]} alt="no-img" />
-                </div>
-            ))}
-            </Carousel>
+    if(this.state.loaded) {
+        return (
+          <div className = "common_cartview">
+          <Navbar />
+            <div className='product_cart'>
+            <Carousel className="Viewproduct_carosuel">
+            {data.map((val,index) => ( 
+                  <div  key={index} className="Viewproduct_imgdiv">
+                      <img  className='img-fluid view_cart_imgs' src={val.home_product_images[0]} alt="no-img" />
+                  </div>
+              ))}
+              </Carousel>
+              <div className="Viewproduct_imgdetail">
+                 hi hi hi
+              </div>
+            </div>
+          <Footer />
           </div>
-        <Footer />
-        </div>
-      )
-              } else return (<div> <Skeleton circle={true} animation="wave" count={10} /> </div>)
-  }
+        )
+                } else return (<div> <Skeleton circle={true} animation="wave" count={10} /> </div>)
+    }
 }
 
 export default Viewproduct

@@ -19,7 +19,7 @@ class App extends Component {
               <Route exact path='/Signin' component={Signin}></Route>
               <Route exact path='/Viewall-products' component={Viewallproducts}></Route>
               <Route exact path='/Viewcart' component={Viewcart}></Route>
-              <Route exact path='/View-product' component={Viewproduct}></Route>
+              <Route exact path='/View-product/:id' component={Viewproduct}></Route>
               <Route exact component={Notfound} />
             </Switch>
       </Router>
