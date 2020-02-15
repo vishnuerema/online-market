@@ -1,22 +1,36 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton';
 import Footer from './footer'
 import Navbar from './Navbar'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import queryString from 'query-string';
 
 
 class Viewproduct extends Component {
-constructor(){
-  super()
+constructor(props){
+  super(props)
   this.state = {
     data: [],
-    loaded: false
+    loaded: false,
+    path: this.props.match.params.id
   }
+  
 }
  componentDidMount () {
+  fetch('http://localhost/vishnue/Deals_of_market/public/viewproduct_data',{
+    method: 'POST',
+    headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(this.state.path)
+  }).then(res => res.json())
+  .then(response => {
+      })
+      .catch(error =>{
+          console.log(error)
+      })
+
     fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         this.setState({
@@ -32,6 +46,7 @@ constructor(){
   }
 
   render () {
+    
     const { data } = this.state
     if(this.state.loaded) {
         return (
