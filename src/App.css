@@ -636,6 +636,21 @@ p.viewprod_highlit_head {
     border: 1px solid #06ab90;
     text-align: center;
 }
+.color_prod {
+    border: 1px solid #565555;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+.Viewproduct_color {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
 /***Viewproduct*****/
 /***viewcart*****/
 /***viewcart*****/
