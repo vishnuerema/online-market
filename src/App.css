@@ -574,11 +574,13 @@ img.product_add_img {
     height: 350px;
 }
 .product_cart {
+    display: flex;
+}
+.product_cart_main{
     width: 80%;
     margin: auto;
     padding: 25px;
     background-color: #fff;
-    display: flex;
 }
 .Viewproduct_carosuel li.thumb {
     width: 64px !important;
@@ -650,6 +652,13 @@ p.viewprod_highlit_head {
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
+}
+.specific_desc_viewprod {
+    margin-top: 25px;
+    display: flex;
+}
+.specification_viewprod {
+    width: 48%;
 }
 /***Viewproduct*****/
 /***viewcart*****/
