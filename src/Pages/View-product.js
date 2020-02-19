@@ -100,12 +100,18 @@ constructor(props){
                                 <tbody>
                                   {Object.keys(val.home_product_specification).map((keyName, i) => (
                                       <tr key={i}>
-                                        <td>{Object.keys(val.home_product_specification[keyName])}</td>
+                                        <td>{Object.keys(val.home_product_specification)}</td>
                                         <td>{val.home_product_specification[keyName].replace(/<[^>]*>?/gm, '')}</td>
                                       </tr>
                                   ))}
                                 </tbody>
                               </table>
+                            </div>
+                        </div>
+                        <div className="descrip_viewprod">
+                            <p className="viewprod_highlit_head">Description</p>
+                            <div className="desc_viewprod_tbl">
+                              {val.home_product_description.productDescription.replace(/<[^>]*>?/gm, '')}
                             </div>
                         </div>
                       </div>

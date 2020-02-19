@@ -559,7 +559,6 @@ img.product_add_img {
 /***product ads*****/
 /***Viewproduct*****/
 .Viewproduct_carosuel {
-    display: inline-block;
     border: 1px solid #e2e1e1;
     padding: 12px;
 }
@@ -656,9 +655,16 @@ p.viewprod_highlit_head {
 .specific_desc_viewprod {
     margin-top: 25px;
     display: flex;
+    justify-content: space-between;
 }
-.specification_viewprod {
+.specification_viewprod,.descrip_viewprod {
     width: 48%;
+}
+.desc_viewprod_tbl {
+    height: 588px;
+    overflow-y: scroll;
+    text-align: justify;
+    padding: 6px;
 }
 /***Viewproduct*****/
 /***viewcart*****/
