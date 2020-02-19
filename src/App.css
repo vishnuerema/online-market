@@ -557,13 +557,100 @@ img.product_add_img {
     margin: auto;
 }
 /***product ads*****/
-/***viewcart*****/
-.viewcart_carosuel {
-    width: 30%;
-}.viewcart_carosuel .control-dots{
-    display: none;
+/***Viewproduct*****/
+.Viewproduct_carosuel {
+    display: inline-block;
+    border: 1px solid #e2e1e1;
+    padding: 12px;
 }
-.viewcart_carosuel .slider .view_cart_imgs {
+.Viewproduct_carosuel_cmn{
+    width: 30%;
+    overflow: hidden;
+}
+.Viewproduct_carosuel .control-dots,.carousel-status{
+    visibility: hidden;
+}
+.Viewproduct_carosuel .slider .view_cart_imgs {
     height: 350px;
 }
+.product_cart {
+    width: 80%;
+    margin: auto;
+    padding: 25px;
+    background-color: #fff;
+    display: flex;
+}
+.Viewproduct_carosuel li.thumb {
+    width: 64px !important;
+    height: 64px;
+}
+.head_name_prod {
+    font-size: 20px;
+}
+span.cost_price {
+    font-size: 25px;
+    margin-right: 12px;
+}
+span.discount_price {
+    color: #a5a5a5;
+    margin-right: 12px;
+}
+span.actul_price {
+    color: #05ad22;
+}
+.Viewproduct_imgdetail {
+    padding: 0px 25px;
+}
+a.productview_a {
+    font-size: 14px;
+    color: #949090;
+}
+.view_prod_highlt {
+    margin-top: 10px;
+}
+p.viewprod_highlit_head {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.view_prod_highlt_list {
+    margin-bottom: 10px;
+}
+.addcart_btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.addtocart {
+    width: 49%;
+    background-color: #06ab90;
+    color: #fff !important;
+    padding: 12px 0px;
+    border: 1px solid #06ab90;
+    text-align: center;
+}
+.buynow{
+    width: 49%;
+    background-color: #fff;
+    color: #06ab90 !important;
+    padding: 12px 0px;
+    border: 1px solid #06ab90;
+    text-align: center;
+}
+.color_prod {
+    border: 1px solid #565555;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+.Viewproduct_color {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+/***Viewproduct*****/
+/***viewcart*****/
 /***viewcart*****/

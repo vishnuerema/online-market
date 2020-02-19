@@ -42,7 +42,7 @@ constructor(){
                   {data.map((val,index) => ( 
                     <div key={index} className='col-md-3 col-lg-3 col-sm-6 col-xs-12'>
                       <div className='viewallitems'>
-                            <Link  to="/View-product" className='viewallproduct_a'>
+                            <Link  to={`/View-product/${val.home_product_id}`} className='viewallproduct_a'>
                             <div  className='products_img_txt'>
                                 <div className='viewallproducts_img'>
                                   <img  className='img-fluid prodct_img' src={val.home_product_images[0]} alt="no-img" />
