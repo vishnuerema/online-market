@@ -13,7 +13,7 @@ constructor(){
   }
 }
  componentDidMount () {
-    fetch('http://localhost/laravel/Deals_of_market/public/welcome').then(res => res.json())
+    fetch('http://localhost/vishnue/Deals_of_market/public/welcome').then(res => res.json())
       .then(response => {
         this.setState({
           data: response[0].map(c => {

@@ -661,10 +661,13 @@ p.viewprod_highlit_head {
     width: 48%;
 }
 .desc_viewprod_tbl {
-    height: 588px;
+    height: 395px;
     overflow-y: scroll;
     text-align: justify;
     padding: 6px;
+}
+.Similar_viewprod .product_cmn {
+    width: 100%;
 }
 /***Viewproduct*****/
 /***viewcart*****/

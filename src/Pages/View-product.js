@@ -5,6 +5,7 @@ import Footer from './footer'
 import Navbar from './Navbar'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import Similarproduct from './Similarproduct'
 
 
 class Viewproduct extends Component {
@@ -18,7 +19,7 @@ constructor(props){
   
 }
  componentDidMount () {
-  fetch('http://localhost/laravel/Deals_of_market/public/viewproduct_data', {
+  fetch('http://localhost/vishnue/Deals_of_market/public/viewproduct_data', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -32,7 +33,7 @@ constructor(props){
 			}).then(response => {
         console.log(response)
 				this.setState({
-          data: response.map(c => {
+          data: response[0].map(c => {
             for(var i in c) {
                 if(c[i] != null && (c[i][0] === '{' || c[i][0] === '[')) c[i] = JSON.parse(c[i])
             }
@@ -100,7 +101,7 @@ constructor(props){
                                 <tbody>
                                   {Object.keys(val.home_product_specification).map((keyName, i) => (
                                       <tr key={i}>
-                                        <td>{Object.keys(val.home_product_specification)}</td>
+                                        <td>{keyName}</td>
                                         <td>{val.home_product_specification[keyName].replace(/<[^>]*>?/gm, '')}</td>
                                       </tr>
                                   ))}
@@ -114,6 +115,9 @@ constructor(props){
                               {val.home_product_description.productDescription.replace(/<[^>]*>?/gm, '')}
                             </div>
                         </div>
+                      </div>
+                      <div className="Similar_viewprod">
+                        <Similarproduct />
                       </div>
                     </div>
                   ))}

@@ -20,7 +20,7 @@ import alertify from 'alertifyjs';
     handleSubmit = e => {
       e.preventDefault();
   
-         fetch('http://localhost/laravel/Deals_of_market/public/usersLogin',{
+         fetch('http://localhost/vishnue/Deals_of_market/public/usersLogin',{
         method: 'POST',
         headers: {
             Accept: 'application/json',
